@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Work - Account</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<div class="header">SMART WORK - ACCOUNT</div>
+
+<div class="container">
+
+<div class="card">
+<h3>User: Guest</h3>
+<p>Status: Active</p>
+<p>Total Balance: <span id="balanceAccount">BDT 0</span></p>
+</div>
+
+<script>
+window.onload = function(){
+document.getElementById("balanceAccount").innerText = "BDT " + getBalance();
+updateBalance();
+}
+</script>
+
+</div>
+
+<div class="menu">
+<div onclick="location.href='index.html'">Home</div>
+<div onclick="location.href='task.html'">Task</div>
+<div onclick="location.href='level.html'">Level</div>
+<div onclick="location.href='account.html'">Account</div>
+</div>
+
+</body>
+</html>
