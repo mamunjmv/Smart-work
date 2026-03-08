@@ -1,0 +1,5 @@
+function getBalance(){ return parseInt(localStorage.getItem("balance"))||0;}
+function updateBalance(){ let b=document.getElementById("balance"); if(b)b.innerText="Balance: BDT "+getBalance();}
+function addReward(){let amount=parseInt(document.getElementById("addAmount").value);if(amount>0){localStorage.setItem("balance",getBalance()+amount);updateBalance();alert("Reward Added: BDT "+amount);document.getElementById("addAmount").value="";}else{alert("Enter valid amount");}}
+function withdrawWithMethod(){let amount=parseInt(document.getElementById("withdrawAmount").value);let method=document.getElementById("paymentMethod").value;let bal=getBalance();if(!method){alert("Select a payment method");return;}if(amount>0 && amount<=bal){localStorage.setItem("balance",bal-amount);updateBalance();alert("Withdraw request sent: BDT "+amount+" via "+method);document.getElementById("withdrawAmount").value="";document.getElementById("paymentMethod").value="";}else{alert("Insufficient balance");}}
+window.onload=function(){updateBalance();}
